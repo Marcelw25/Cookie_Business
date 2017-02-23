@@ -1,17 +1,28 @@
 <DOCTYPE html>
   <head>
     <title>
-      Maples!
+      Sam's Salmon Cookies
     </title>
     <link rel="stylesheet" type="text/css" href="maple.css"</
   </head>
   <body>
-    <h1>Maple bar info</h1>
-    <h5>We love our maples</h5>
-    <button onclick="myFunction()">Reload page</button>
+    <header>
+    <h1>Sam's Salmon Cookie Shop</h1>
+  </header>
+    <img src ="images/Sams-salmon.png"/>
+    <h2>About Sam's Cookie Shop</h2>
+    <p>Lorizzle ipsum dolor break yo neck, yall amizzle, mah nizzle rizzle elit. Nullam uhuh ... yih! velizzle, fo volutpizzle, suscipizzle i saw beyonces tizzles and my pizzle went crizzle, gravida vizzle, arcu. Pellentesque hizzle tortor. Nizzle eros. That's the shizzle at da bomb dapibus daahng dawg tempizzle tempor. Da bomb fizzle nibh et rizzle. Away izzle tortor. Pellentesque eleifend rhoncizzle fizzle. Uhuh ... yih! hac tellivizzle crazy dictumst. Dawg sizzle. Curabitur tellus urna, pretizzle , mattizzle i saw beyonces tizzles and my pizzle went crizzle, eleifend sizzle, nunc. Fo shizzle suscipizzle. Integer sempizzle mofo sizzle purus</p>
 
+    <h3>History</h3>
+    <p>Rizzle dolor amizzle, fo shizzle adipiscing elit. Boofron sapizzle velizzle, cool volutpizzle, suscipizzle sure, phat vizzle, check it out. Pellentesque shizzlin dizzle tortor. Sizzle break yo neck, yall. Fusce izzle dolizzle dapibizzle turpis tempizzle tempor. Mauris pellentesque nibh i'm in the shizzle turpizzle. That's the shizzle izzle gizzle. Pellentesque eleifend rhoncizzle gangsta. In uhuh ... yih! for sure platea dictumst. Crazy i saw beyonces tizzles and my pizzle went crizzle. Curabitur tellus urna, pretizzle eu, mattis shizzle my nizzle crocodizzle, eleifend vitae, fo shizzle mah nizzle fo rizzle, mah home g-dizzle. Get down get down suscipizzle. Integer sempizzle velit fizzle dang.</p><br>
 
-    <table id="pioneerSquareList">
+    <a href="http://www.franchising.com/" target="_blank">
+<button onclick=>Learn About Franchising</button></a>
+
+  <h4>Sam's Salmon Shop Store Data</h4>
+  <button onclick="myFunction()">refresh</button>
+
+    <table id="">
       <th>Cancun</th>
       <tr><td>10am:333</td></tr>
       <tr><td>11am:754</td></tr>
@@ -22,10 +33,6 @@
       <tr><td>4pm:733</td></tr>
       <tr><td>5pm:733</td></tr>
       <tr><td>6pm:633</td></tr>
-      <tr><td>7pm:2</td></tr>
-      <tr><td>8pm:1</td></tr>
-      <tr><td>9pm:200</td></tr>
-      <tr><td>10pm:400</td></tr>
     </table>
     <table class="USA">
       <th>Portland</th>
@@ -39,14 +46,10 @@
       <tr><td>5pm:22</td></tr>
       <tr><td>6pm:22</td></tr>
       <tr><td>7pm:22</td></tr>
-      <tr><td>8pm:2005</td></tr>
-      <tr><td>9pm:2344</td></tr>
-      <tr><td>10pm:2300</td></tr>
     </table>
     <table>
       <table class="China">
         <th>Shangnia</th>
-        <tr><td="demo"><p>10:00am<p/>ten:3020</td></tr>
         <tr><td>11am:30404</td></tr>
         <tr><td>12pm:4393</td></tr>
         <tr><td>1pm:3992</td></tr>
@@ -56,67 +59,5 @@
         <tr><td>5pm:222</td></tr>
         <tr><td>6pm:283</td></tr>
         <tr><td>7pm:939</td></tr>
-        <tr><td>8pm:1000</td></tr>
-        <tr><td>9pm:111</td></tr>
-        <tr><td>10pm:100</td></tr>
       </table>
-
-      <script>
-
-  // create generic object
-  function store(minCust,maxCust,avgCookieSale) {
-    this.minCust = minCust; // per hour
-    this.maxCust = maxCust; // per hour
-    this.avgCookieSale = avgCookieSale; // per hour
-    this.simulatedSales = function() {
-      var simulationResults = "";
-      var simulationArray = [];
-      var total = 0;
-      // loop through each hour store is open
-      for (var i = 10; i < 18; i++) {
-        // get the open store hour
-        var hour = ((i + 11) % 12 + 1);
-        if (i <= 12) {
-          hour += "am";
-        } else {
-          hour += "pm";
-        }
-        // get random amount of customers per hour
-        var randomCustPerHour = Math.floor(Math.random() * (this.maxCust - this.minCust) + this.minCust);
-        // calculate amount of cookies per hour
-        var simulatedCookieQty = Math.floor(randomCustPerHour * this.avgCookieSale);
-        // add to total qty
-        total += simulatedCookieQty;
-        // put results in the array
-        simulationArray.push("<li>" + hour + ": " + simulatedCookieQty + " cookies</li>");
-      }
-      // loop through array to make list items
-      for (var i = 0; i < simulationArray.length; i++) {
-        simulationResults += simulationArray[i];
-      }
-      // add total
-      simulationResults += "<li>Total: " + total + " cookies</li>";
-      return simulationResults;
-    };
-  }
-
-  // make the store objects
-  var pioneerSquareStore = new store(17, 88, 5.2);
-  var portlandAirportStore = new store(6, 24, 1.2)
-  var washingtonSquareStore = new store(11, 38, 1.9);
-  var sellwoodStore = new store(20, 48, 3.3);
-  var pearlDistrictStore = new store(3, 24, 2.6);
-
-  // show simulated sales on page
-  document.getElementById("pioneerSquareList").innerHTML = pioneerSquareStore.simulatedSales();
-  document.getElementById("portlandAirportList").innerHTML = portlandAirportStore.simulatedSales();
-  document.getElementById("washingtonSquareList").innerHTML = washingtonSquareStore.simulatedSales();
-  document.getElementById("sellwoodList").innerHTML = sellwoodStore.simulatedSales();
-
-function myFunction() {
-    location.reload();
-}
-      </script>
-
-
     </body>
