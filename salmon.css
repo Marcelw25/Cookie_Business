@@ -3,23 +3,28 @@ body{
 }
 
 h1{
-  text-align: center;
+  background-color: #000000;
+  color:white;
 }
-h2,h3,h4,header{
-  background-color:#00afba
-}
+table, th, td {
+    border: 5px solid black;
+    width: 100p;
+    height: 100px ;
 
 }
-header{
+#header{
   padding: 1em;
    color: #ffe5eb;
-   background-color: #00afba;
    clear: both;
    text-align: center;
+   background-color: #000000;
+   font-family: 'Roboto', sans-serif;
+
 }
 img{
   height: 300px;
   display: block;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 45px
 }
