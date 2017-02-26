@@ -1,0 +1,107 @@
+<DOCTYPE html>
+  <head>
+    <title>
+      Sam's Salmon Cookies
+    </title>
+    <link rel="stylesheet" type="text/css" href="salmon.css"</
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+  </head>
+  <body>
+    <header id="header">
+    <h1>Sam's Salmon Cookie Shop</h1>
+  </header>
+    <img src ="images/Sams-salmon.png"/>
+    <h1>About Sam's Cookie Shop</h1>
+    <p>Lorizzle ipsum dolor break yo neck, yall amizzle, mah nizzle rizzle elit. Nullam uhuh ... yih! velizzle, fo volutpizzle, suscipizzle i saw beyonces tizzles and my pizzle went crizzle, gravida vizzle, arcu. Pellentesque hizzle tortor. Nizzle eros. That's the shizzle at da bomb dapibus daahng dawg tempizzle tempor. Da bomb fizzle nibh et rizzle. Away izzle tortor. Pellentesque eleifend rhoncizzle fizzle. Uhuh ... yih! hac tellivizzle crazy dictumst. Dawg sizzle. Curabitur tellus urna, pretizzle , mattizzle i saw beyonces tizzles and my pizzle went crizzle, eleifend sizzle, nunc. Fo shizzle suscipizzle. Integer sempizzle mofo sizzle purus</p>
+
+    <h1>History</h1>
+    <p>Rizzle dolor amizzle, fo shizzle adipiscing elit. Boofron sapizzle velizzle, cool volutpizzle, suscipizzle sure, phat vizzle, check it out. Pellentesque shizzlin dizzle tortor. Sizzle break yo neck, yall. Fusce izzle dolizzle dapibizzle turpis tempizzle tempor. Mauris pellentesque nibh i'm in the shizzle turpizzle. That's the shizzle izzle gizzle. Pellentesque eleifend rhoncizzle gangsta. In uhuh ... yih! for sure platea dictumst. Crazy i saw beyonces tizzles and my pizzle went crizzle. Curabitur tellus urna, pretizzle eu, mattis shizzle my nizzle crocodizzle, eleifend vitae, fo shizzle mah nizzle fo rizzle, mah home g-dizzle. Get down get down suscipizzle. Integer sempizzle velit fizzle dang.</p><br>
+
+    <a href="http://www.franchising.com/" target="_blank">
+<button onclick=>Learn About Franchising</button></a>
+
+  <h1>Sam's Salmon Shop Store Data</h1>
+  <button onclick="myFunk()">Reload page</button>
+
+  <table class="salmonStoreData">
+      <tr>
+        <th class="info">Location</th>
+        <th>10 AM</th>
+        <th>11 AM</th>
+        <th>12 </th>
+        <th>1 PM</th>
+        <th>2 PM</th>
+        <th>3 PM</th>
+        <th>4 PM</th>
+        <th>5 PM</th>
+        <th>Total</th>
+      </tr>
+      <tr id="tablehead"></tr>
+      <tr id="empirStateBuildingNumbers"></tr>
+      <tr id="centralParkNumbers"></tr>
+      <tr id="statueOfLibertyNumbers"></tr>
+      <tr id="museumoOfArtNumbers"></tr>
+      <tr id="madisonSquareGardenNumbers"></tr>
+    </table>
+
+<script>
+// make each shop its new own object.
+var empireStateBuilding = new shop("Empire State Building", 17, 88, 5.2);
+var centralPark = new shop("Central Park", 6, 24, 1.2)
+var statueOfLiberty = new shop("Statue of Liberty", 11, 38, 1.9);
+var museumoOfArt = new shop("Museum Of Art", 20, 48, 3.3);
+var madisonSquareGarden = new shop("Madison Square Garden", 3, 24, 2.6);
+
+// create store Objects.
+function shop(location, minCustomer, maxCustomer, avgCookieSale) {
+  this.shop = location;
+  this.minC = minCustomer;
+  this.maxC = maxCustomer;
+  this.avgSales = avgCookieSale;
+
+
+    this.calculateSales = function() {
+    var cookieTotal = "";
+    var cookieArray = ["<td class=\"info\">" + this.shop + "</td>"];
+    var total = 0;
+    for (var i = 0; i < 8; i++) {
+      var hour = (i + 11);
+      if (i <= 12) {
+        hour += " am";
+      } else {
+        hour += " pm";
+      }
+      var CustPerHour = Math.floor(Math.random() * (this.maxC - this.minC) + this.minC + this.maxC);
+      var cookieTlt = Math.floor(CustPerHour * this.avgSales);
+      total += cookieTlt;
+      cookieArray.push("<td>" + cookieTlt + "</td>");
+    }
+    for (var i = 0; i < cookieArray.length; i++) {
+      cookieTotal += cookieArray[i];
+    }
+    cookieTotal += "<td>"+ total +"</td>";
+    return cookieTotal;
+  };
+}
+
+//show sales in table
+
+
+document.getElementById("empirStateBuildingNumbers").innerHTML = empireStateBuilding.calculateSales();
+
+document.getElementById("centralParkNumbers").innerHTML = centralPark.calculateSales();
+
+document.getElementById("statueOfLibertyNumbers").innerHTML = statueOfLiberty.calculateSales();
+
+document.getElementById("museumoOfArtNumbers").innerHTML = museumoOfArt.calculateSales();
+
+document.getElementById("madisonSquareGardenNumbers").innerHTML = madisonSquareGarden.calculateSales();
+
+function myFunk() {
+    location.reload();
+}
+</script>
+
+
+    </body>
