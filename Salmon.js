@@ -8,9 +8,9 @@ var madisonSquareGarden = new shop("Madison Square Garden", 3, 24, 2.6);
 // create store Objects.
 function shop(location, minCustomer, maxCustomer, avgCookieSale) {
   this.shop = location;
-  this.minC = minCustomer; // per hour
-  this.maxC = maxCustomer; // per hour
-  this.avgSales = avgCookieSale; // per hour
+  this.minC = minCustomer;
+  this.maxC = maxCustomer;
+  this.avgSales = avgCookieSale;
 
 
     this.calculateSales = function() {
@@ -18,7 +18,7 @@ function shop(location, minCustomer, maxCustomer, avgCookieSale) {
     var cookieArray = ["<td class=\"info\">" + this.shop + "</td>"];
     var total = 0;
     for (var i = 0; i < 8; i++) {
-      var hour = ((i + 11) % 12);
+      var hour = (i + 11);
       if (i <= 12) {
         hour += " am";
       } else {
