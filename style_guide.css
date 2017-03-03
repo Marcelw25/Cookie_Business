@@ -1,0 +1,28 @@
+h1,h2,h3{
+color:#7F231D;
+font-family: 'Roboto', sans-serif;
+font-size: 50px;
+background-color: #FFA8A3;
+text-align: center;
+
+}
+#bgdcolor{
+background-color: #FFA8A3;
+}
+#color{
+  color: #7F231D
+}
+#ffamily{
+font-family: 'Roboto', sans-serif;
+}
+
+P{
+  font-family: 'Noto Sans', sans-serif;
+  color: #807F7F;
+
+}
+
+img
+{
+  width: 800px;
+}
