@@ -1,28 +1,31 @@
 h1,h2,h3{
-color:#7F231D;
-font-family: 'Roboto', sans-serif;
-font-size: 50px;
-background-color: #FFA8A3;
-text-align: center;
-
+  color:#2f937a;
+  font-family: 'Roboto', sans-serif;
+  font-size: 50px;
+  text-align: center;
+  border: 5px outset #c9bf84;
 }
 #bgdcolor{
-background-color: #FFA8A3;
+  background-color: #FFFFFF;
 }
-#color{
-  color: #7F231D
+#color1{
+  color: #c9bf84;
+}
+color{
+  color:#2f937a;
 }
 #ffamily{
-font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
-
 P{
   font-family: 'Noto Sans', sans-serif;
-  color: #807F7F;
-
+  color: #2f937a;
 }
-
-img
-{
+img{
+  width: 310px;
+  height: 225px;
+  display: inline-flex;
+}
+#cp{
   width: 800px;
 }
