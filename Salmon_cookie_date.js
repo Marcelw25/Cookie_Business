@@ -29,7 +29,10 @@ function Shop(location, minC, maxC, avgCookieSale) {
   };
 }
 
+
 var shopData = [EmpireStateBuilding.cookieData(), centralPark.cookieData(), statueOfLiberty.cookieData(), museumoOfArt.cookieData(), madisonSquareGarden.cookieData() ,yankeeStadium.cookieData()];
+
+
 
 function createTable(){
 var table = document.getElementById("SalmonData");
@@ -58,5 +61,17 @@ for(var storeIndex = 0; storeIndex < shopData.length; storeIndex++){
   }
 table.appendChild(tableRow);
 }
+
 }
+function addStore(){
+  console.log("new store");
+  var storeLocation = document.getElementById("storeLocationInput").value;
+  var storeMinCust = document.getElementById("storeMinCustInput").value;
+  var storeMaxCust = document.getElementById("storeMaxCustInput").value;
+  var avgCookieSale = document.getElementById("avgCookieSaleInput").value;
+var openStore = stores.push(new Shop(storeLocation, storeMinCust, storeMaxCust, avgCookieSale));
+ console.log(openStore);
+}
+
+
 createTable();
