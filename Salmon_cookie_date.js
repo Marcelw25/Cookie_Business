@@ -63,15 +63,5 @@ table.appendChild(tableRow);
 }
 
 }
-function addStore(){
-  console.log("new store");
-  var storeLocation = document.getElementById("storeLocationInput").value;
-  var storeMinCust = document.getElementById("storeMinCustInput").value;
-  var storeMaxCust = document.getElementById("storeMaxCustInput").value;
-  var avgCookieSale = document.getElementById("avgCookieSaleInput").value;
-var openStore = stores.push(new Shop(storeLocation, storeMinCust, storeMaxCust, avgCookieSale));
- console.log(openStore);
-}
-
 
 createTable();
